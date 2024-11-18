@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".MainActivity"
+    >
+
+    <!-- Top Bar with Welcome Text and Search Icon -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp">
+
+        <TextView
+            android:id="@+id/tvWelcome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Welcome Guest"
+            android:textSize="18sp"
+            android:textColor="@android:color/black"
+            android:layout_alignParentStart="true" />
+
+        <ImageView
+            android:id="@+id/ivSearch"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@android:drawable/ic_menu_search"
+            android:layout_alignParentEnd="true"
+            android:contentDescription="Search Icon" />
+    </RelativeLayout>
+
+    <!-- Horizontal Scroll List for Categories -->
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!-- Category Items (Add more as needed) -->
+            <TextView
+                android:id="@+id/tvMovies"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Movies"
+                android:padding="16dp"
+                android:background="?attr/selectableItemBackground" />
+
+            <TextView
+                android:id="@+id/sports"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sports"
+                android:padding="16dp"
+                android:background="?attr/selectableItemBackground" />
+
+            <TextView
+                android:id="@+id/tvComedyShows"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Comedy Shows"
+                android:padding="16dp"
+                android:background="?attr/selectableItemBackground" />
+
+            <TextView
+                android:id="@+id/tvMusicShows"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Music Shows"
+                android:padding="16dp"
+                android:background="?attr/selectableItemBackground" />
+
+            <TextView
+                android:id="@+id/tvStandup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Standup"
+                android:padding="16dp"
+                android:background="?attr/selectableItemBackground" />
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <!-- Recommended Movies Heading -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Recommended Movies"
+        android:textSize="18sp"
+        android:textColor="@android:color/black"
+        android:paddingTop="16dp"
+        android:paddingBottom="8dp" />
+
+    <!-- RecyclerView for Movie List -->
+
+    <!-- Bottom Navigation Bar -->
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewMovies"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:paddingBottom="8dp"
+            />
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="71dp"
+        android:background="@color/design_default_color_primary"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="8dp">
+
+        <!-- Home Button -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_menu_home" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Home"
+                android:textColor="@android:color/white"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <!-- Movies Button -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:importantForAccessibility="no"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/Movies1"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@android:drawable/ic_media_play" />
+
+            <TextView
+                android:id="@+id/Movies2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Movies"
+                android:textColor="@android:color/white"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <!-- Profile Button -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@android:drawable/ic_menu_myplaces" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Profile"
+                android:textColor="@android:color/white"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

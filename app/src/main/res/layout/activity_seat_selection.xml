@@ -1,0 +1,112 @@
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Movie Name -->
+        <TextView
+            android:id="@+id/tvMovieName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Selected Movie"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:paddingBottom="8dp" />
+
+        <!-- Theater Name -->
+        <TextView
+            android:id="@+id/tvTheaterName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Selected Theater"
+            android:textSize="18sp"
+            android:paddingBottom="8dp" />
+
+        <!-- Date and Time -->
+        <TextView
+            android:id="@+id/tvDateTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Date &amp; Time"
+            android:paddingBottom="16dp" />
+
+        <!-- Seat Layout -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Platinum Section -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Platinum (₹250)"
+                android:textStyle="bold"
+                android:padding="8dp" />
+
+            <GridLayout
+                android:id="@+id/platinumSeats"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="5"
+                android:rowCount="5"
+                android:paddingBottom="16dp" />
+
+            <!-- Gap -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="8dp" />
+
+            <!-- Gold Section -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Gold (₹170)"
+                android:textStyle="bold"
+                android:padding="8dp" />
+
+            <GridLayout
+                android:id="@+id/goldSeats"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="5"
+                android:rowCount="10"
+                android:paddingBottom="16dp" />
+
+            <!-- Gap -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="8dp" />
+
+            <!-- Silver Section -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Silver (₹140)"
+                android:textStyle="bold"
+                android:padding="8dp" />
+
+            <GridLayout
+                android:id="@+id/silverSeats"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="5"
+                android:rowCount="5" />
+        </LinearLayout>
+
+        <!-- Pay and Confirm Button -->
+        <Button
+            android:id="@+id/btnPayAndConfirm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Pay and Confirm"
+            android:visibility="gone"
+            android:layout_marginTop="16dp" />
+    </LinearLayout>
+</ScrollView>
