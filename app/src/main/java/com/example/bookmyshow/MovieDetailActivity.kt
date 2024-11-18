@@ -1,11 +1,13 @@
 package com.example.bookmyshow
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class MovieDetailActivity : AppCompatActivity() {
 
@@ -14,6 +16,7 @@ class MovieDetailActivity : AppCompatActivity() {
     private lateinit var movieDescriptionDetail: TextView
     private lateinit var bookTicketsButton: Button
 
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_movie_detail)
@@ -46,6 +49,14 @@ class MovieDetailActivity : AppCompatActivity() {
             val intent = Intent(this, SelectTheaterActivity::class.java)
             intent.putExtra("MOVIE_NAME", movieTitle) // Pass the movie name
            // intent.putExtra("movie_image_resource", movieImageResource)
+            startActivity(intent)
+        }
+
+        val fabHome = findViewById<FloatingActionButton>(R.id.fabHome)
+        // Set an onClick listener for the FAB
+        fabHome.setOnClickListener {
+            // Start HomeActivity when the FAB is clicked
+            val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
     }

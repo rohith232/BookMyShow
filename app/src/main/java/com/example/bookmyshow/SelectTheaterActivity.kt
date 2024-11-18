@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.bookmyshow.adapter.TheaterAdapter
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import java.text.SimpleDateFormat
 import java.util.Locale
 
@@ -52,6 +53,13 @@ class SelectTheaterActivity : AppCompatActivity() {
             }
             datesContainer.addView(textView)
         }
+        val fabHome = findViewById<FloatingActionButton>(R.id.fabHome)
+        // Set an onClick listener for the FAB
+        fabHome.setOnClickListener {
+            // Start HomeActivity when the FAB is clicked
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun setupTheaterList() {
@@ -61,7 +69,8 @@ class SelectTheaterActivity : AppCompatActivity() {
         // Dummy data
         val theaters = listOf(
             "Jalandhar Friends" to listOf("10:00 AM", "1:00 PM", "5:00 PM"),
-            "MBD Mall Jalanadhar 2" to listOf("11:00 AM", "3:00 PM", "7:00 PM")
+            "MBD Mall Jalanadhar 2" to listOf("11:00 AM", "3:00 PM", "7:00 PM"),
+            "Phagwara Cinemas" to listOf("1:00 PM", "6:00 PM", "9:00 PM")
         )
         theaterListView.adapter = TheaterAdapter(theaters) { theater, time ->
             val intent = Intent(this, SeatSelectionActivity::class.java)
@@ -82,4 +91,5 @@ class SelectTheaterActivity : AppCompatActivity() {
         }
         return dates
     }
+
 }

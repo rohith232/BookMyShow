@@ -44,4 +44,14 @@
         android:layout_height="wrap_content"
         android:text="Malayalam" />
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabHome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:layout_margin="16dp"
+        android:contentDescription="Go to Home"
+        android:src="@drawable/home"
+        android:tint="@android:color/white" />
+
 </LinearLayout>

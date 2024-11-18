@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class LanguageSelectionActivity : AppCompatActivity() {
 
@@ -48,6 +49,14 @@ class LanguageSelectionActivity : AppCompatActivity() {
         findViewById<Button>(R.id.btnMalayalam).setOnClickListener {
             val intent = Intent(this, MovieListActivity::class.java)
             intent.putExtra("selected_language", "Malayalam")
+            startActivity(intent)
+        }
+
+        val fabHome = findViewById<FloatingActionButton>(R.id.fabHome)
+        // Set an onClick listener for the FAB
+        fabHome.setOnClickListener {
+            // Start HomeActivity when the FAB is clicked
+            val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
 

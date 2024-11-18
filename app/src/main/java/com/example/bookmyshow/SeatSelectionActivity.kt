@@ -15,6 +15,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class SeatSelectionActivity : AppCompatActivity() {
 
@@ -72,6 +73,13 @@ class SeatSelectionActivity : AppCompatActivity() {
                 btnPayAndConfirm.visibility = if (selectedSeats.isNotEmpty()) View.VISIBLE else View.GONE
             }
             gridLayout.addView(seatButton)
+        }
+        val fabHome = findViewById<FloatingActionButton>(R.id.fabHome)
+        // Set an onClick listener for the FAB
+        fabHome.setOnClickListener {
+            // Start HomeActivity when the FAB is clicked
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
         }
     }
 }

@@ -1,11 +1,13 @@
 package com.example.bookmyshow
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class MovieListActivity : AppCompatActivity() {
 
@@ -26,6 +28,15 @@ class MovieListActivity : AppCompatActivity() {
         // Display the selected language in the TextView
         val languageTextView: TextView = findViewById(R.id.languageTextView)
         languageTextView.text = "$selectedLanguage Movies:"
+
+
+        val fabHome = findViewById<FloatingActionButton>(R.id.fabHome)
+        // Set an onClick listener for the FAB
+        fabHome.setOnClickListener {
+            // Start HomeActivity when the FAB is clicked
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
 
         // Example movie data with languages
         val allMovies = listOf(

@@ -1,6 +1,7 @@
 package com.example.bookmyshow
 
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.widget.ImageView
@@ -16,6 +17,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var recyclerViewMovies: RecyclerView
 
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(activity_main)
@@ -32,15 +34,29 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
 
             // Navigate to Movies or update RecyclerView content
-            Toast.makeText(this, "Movies category selected", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Movies category selected ", Toast.LENGTH_SHORT).show()
+        }
+
+        //profile
+
+        findViewById<TextView>(R.id.profile1).setOnClickListener {
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+
+            Toast.makeText(this, "User Profile", Toast.LENGTH_SHORT).show()
+        }
+        findViewById<ImageView>(R.id.profile).setOnClickListener {
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+            Toast.makeText(this, "User Profile", Toast.LENGTH_SHORT).show()
         }
 
         findViewById<TextView>(R.id.sports).setOnClickListener {
-            Toast.makeText(this, "Sports category selected", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Sports category selected Coming Soon...", Toast.LENGTH_SHORT).show()
         }
 
         findViewById<TextView>(R.id.tvComedyShows).setOnClickListener {
-            Toast.makeText(this, "Comedy Shows category selected", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Comedy Shows category selected Coming Soon...", Toast.LENGTH_SHORT).show()
         }
 
         findViewById<TextView>(R.id.tvMusicShows).setOnClickListener {
@@ -48,7 +64,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         findViewById<TextView>(R.id.tvStandup).setOnClickListener {
-            Toast.makeText(this, "Standup category selected", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Standup category selected Coming Soon...", Toast.LENGTH_SHORT).show()
         }
         findViewById<ImageView>(R.id.Movies1).setOnClickListener{
             val intent = Intent(this, LanguageSelectionActivity::class.java)
@@ -81,7 +97,7 @@ class MainActivity : AppCompatActivity() {
             Movie("Dangal", "A Hindi movie about a wrestler's journey.", "movie_image_5", "Hindi"),
             Movie("3 Idiots", "A Hindi movie about three friends.", "movie_image_6", "Hindi"),
             Movie("Vikram", "A Tamil action movie.", "movie_image_7", "Tamil"),
-            Movie("Inception", "subconscious", "movie_image_1", "English"),
+            Movie("Inception", "A thief who steals corporate secrets through the use of dream-sharing technology", "inception", "English"),
 
             )
     }

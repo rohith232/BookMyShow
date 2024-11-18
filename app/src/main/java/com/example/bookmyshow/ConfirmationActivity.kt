@@ -1,5 +1,6 @@
 package com.example.bookmyshow
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
@@ -7,6 +8,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class BookingConfirmationActivity : AppCompatActivity() {
 
@@ -42,6 +44,14 @@ class BookingConfirmationActivity : AppCompatActivity() {
             .error(R.drawable.error_placeholder) // Error image
             .into(moviePoster)
 
+
+        val fabHome = findViewById<FloatingActionButton>(R.id.fabHome)
+        // Set an onClick listener for the FAB
+        fabHome.setOnClickListener {
+            // Start HomeActivity when the FAB is clicked
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
         // Confirm Button Action
         val confirmButton = findViewById<Button>(R.id.btnConfirm)
         confirmButton.setOnClickListener {
