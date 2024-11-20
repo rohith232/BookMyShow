@@ -19,7 +19,7 @@ It includes dynamic content fetching, interactive UIs, and integration with Room
 
 | Feature          | Screenshot        |
 |-------------------|-------------------|
-| Movie Selection   | ![Movie List](path/to/screenshot1.png) |
+| Movie Selection   | ![Movie List]("C:\Users\Dell\Downloads\1.jpeg") |
 | Theater Selection | ![Theater List](path/to/screenshot2.png) |
 | Seat Booking      | ![Seat Booking](path/to/screenshot3.png) |
 | Confirmation      | ![Confirmation](path/to/screenshot4.png) |
